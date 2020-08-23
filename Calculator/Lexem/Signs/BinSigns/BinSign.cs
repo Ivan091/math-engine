@@ -7,18 +7,18 @@ namespace Calculator
 {
     public abstract class BinSign : Sign
     {
-        public abstract double Calculate(double lNum, double rNum);
+        public abstract double Compute(double lArg, double rArg);
 
         public override abstract Lexem CreateSame(Match match);
 
-        public override void RPNCalculate(Stack<Lexem> lexems)
+        public override void RPNCalculate(Stack<IRPNCalculatable> lexems)
         {
-            var rNum = lexems.Peek() as Number;
+            var rArg = lexems.Peek() as Number;
             lexems.Pop();
 
-            var lNum = lexems.Peek() as Number;
+            var lArg = lexems.Peek() as Number;
 
-            lNum.Value = this.Calculate(lNum.Value, rNum.Value);
+            lArg.Value = this.Compute(lArg.Value, rArg.Value);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Calculator
 
         public double Calculate ()
         {
-            var stack = new Stack<Lexem>();
+            var stack = new Stack<IRPNCalculatable>();
 
             foreach (var lexem in Lexems)
             {

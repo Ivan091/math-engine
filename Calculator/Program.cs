@@ -8,7 +8,7 @@ namespace Calculator
     {
         static void Main()
         {
-            var calc = new Calculator("exp(2 + 2) + 2 * 2");
+            var calc = new Calculator("2-2");
             Console.WriteLine(calc.Calculate());
         }
     }

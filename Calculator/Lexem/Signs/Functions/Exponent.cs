@@ -7,7 +7,7 @@ namespace Calculator
 {
     public class Exponent : Function
     {
-        public override double Calculate(double arg)
+        public override double Compute(double arg)
         {
             return Math.Exp(arg);
         }

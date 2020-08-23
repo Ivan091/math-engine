@@ -19,7 +19,7 @@ namespace Calculator
             { Value = double.Parse(match.Value) };
         }
 
-        public override void RPNCalculate(Stack<Lexem> lexems)
+        public override void RPNCalculate(Stack<IRPNCalculatable> lexems)
         {
             lexems.Push(this);
         }

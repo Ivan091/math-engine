@@ -17,7 +17,7 @@ namespace Calculator
     public abstract class Sign : Lexem
     {
         public abstract Priority Priority { get; }
-        public abstract override void RPNCalculate(Stack<Lexem> lexems);
+        public abstract override void RPNCalculate(Stack<IRPNCalculatable> lexems);
         public abstract override Lexem CreateSame(Match match);
         public override void RPNConvert(Stack<Sign> signs, LinkedList<Lexem> lexems)
         {

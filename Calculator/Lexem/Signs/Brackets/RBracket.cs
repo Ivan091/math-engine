@@ -13,7 +13,7 @@ namespace Calculator
         {
             return new RBracket();
         }
-        public override void RPNCalculate(Stack<Lexem> lexems)
+        public override void RPNCalculate(Stack<IRPNCalculatable> lexems)
         {
             return;
         }

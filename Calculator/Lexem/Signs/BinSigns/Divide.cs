@@ -9,9 +9,9 @@ namespace Calculator
     {
         public override Priority Priority => Priority.Miltiply;
 
-        public override double Calculate(double lNum, double rNum)
+        public override double Compute(double lArg, double rArg)
         {
-            return lNum / rNum;
+            return lArg / rArg;
         }
 
         public override Lexem CreateSame(Match match)

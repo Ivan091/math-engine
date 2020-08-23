@@ -12,13 +12,14 @@ namespace Calculator
         private Dictionary<Lexem, Regex> LexemToRegex { get; } = new Dictionary<Lexem, Regex>
         {
             { new Number(), new Regex(@"\d+(?:\.\d+)?") },
-            { new Minus(), new Regex(@"-") },
+            { new UnMinus(), new Regex(@"-") },
             { new Plus(), new Regex(@"\+") },
             { new Divide(), new Regex(@"/") },
             { new Multiply(), new Regex(@"\*") },
             { new LBracket(), new Regex(@"\(") },
             { new RBracket(), new Regex(@"\)") },
             { new Exponent(), new Regex(@"exp") },
+            { new Factorial(), new Regex(@"!") }
         };
         private string Input { get; set; }
 

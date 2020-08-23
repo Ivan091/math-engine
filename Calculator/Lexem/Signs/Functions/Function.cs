@@ -11,13 +11,12 @@ namespace Calculator
 
         public abstract override Lexem CreateSame(Match match);
 
-        public abstract double Calculate(double arg);
+        public abstract double Compute(double arg);
 
-        public override void RPNCalculate(Stack<Lexem> lexems)
+        public override void RPNCalculate(Stack<IRPNCalculatable> lexems)
         {
             var arg = lexems.Peek() as Number;
-            arg.Value = this.Calculate(arg.Value);
-
+            arg.Value = this.Compute(arg.Value);
         }
     }
 }

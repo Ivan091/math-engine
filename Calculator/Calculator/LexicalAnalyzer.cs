@@ -9,35 +9,49 @@ namespace Calculator
 {
     class LexicalAnalyzer
     {
-        private Dictionary<ILexem, Regex> LexemToRegex { get; } = new Dictionary<ILexem, Regex>
+        private Dictionary<Lexem, Regex> LexemToRegex { get; } = new Dictionary<Lexem, Regex>
         {
             { new Number(), new Regex(@"\d+(?:\.\d+)?") },
             { new Minus(), new Regex(@"-") },
             { new Plus(), new Regex(@"\+") },
+            { new Divide(), new Regex(@"/") },
+            { new Multiply(), new Regex(@"\*") },
+            { new LBracket(), new Regex(@"\(") },
+            { new RBracket(), new Regex(@"\)") },
+            { new Exponent(), new Regex(@"exp") },
         };
         private string Input { get; set; }
+
+        private struct LexemIdxPair : IComparable<LexemIdxPair>
+        {
+            public LexemIdxPair(Lexem lexem, int idx)
+            {
+                Lexem = lexem;
+                Idx = idx;
+            }
+            public Lexem Lexem { get; set; }
+            public int Idx { get; set; }
+
+            public int CompareTo([AllowNull] LexemIdxPair other)
+            {
+                return this.Idx - other.Idx;
+            }
+        }
 
         public LexicalAnalyzer(string input)
         {
             Input = input;
         }
-        public IEnumerable<ILexem> Analyse()
+        public IEnumerable<Lexem> Analyse()
         {
-            var matches = new SortedSet<(ILexem, int)>(new LexemIdxCoomparer());
+
+
+            var matches = new SortedSet<LexemIdxPair>();
             foreach (var lexem in LexemToRegex)
             {
-                lexem.Value.Matches(Input).ToList().ForEach(x => matches.Add((lexem.Key.Create(x), x.Index)));
+                lexem.Value.Matches(Input).ToList().ForEach(x => matches.Add(new LexemIdxPair(lexem.Key.CreateSame(x), x.Index)));
             }
-            return matches.Select(x => x.Item1);
+            return matches.Select(x => x.Lexem);
         }
-
-        class LexemIdxCoomparer : IComparer<(ILexem, int)>
-        {
-            public int Compare([AllowNull] (ILexem, int) x, [AllowNull] (ILexem, int) y)
-            {
-                return x.Item2 - y.Item2;
-            }
-        }
-
     }
 }

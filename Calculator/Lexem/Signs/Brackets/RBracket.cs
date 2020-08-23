@@ -5,28 +5,27 @@ using System.Text.RegularExpressions;
 
 namespace Calculator
 {
-    class Number : Lexem
+    public class RBracket : Sign
     {
-        public double Value { get; set; }
+        public override Priority Priority => Priority.Bracket;
 
-        public Number(double num = 0)
-        {
-            Value = num;
-        }
         public override Lexem CreateSame(Match match)
         {
-            return new Number()
-            { Value = double.Parse(match.Value) };
+            return new RBracket();
         }
-
         public override void RPNCalculate(Stack<Lexem> lexems)
         {
-            lexems.Push(this);
+            return;
         }
 
         public override void RPNConvert(Stack<Sign> signs, LinkedList<Lexem> lexems)
         {
-            lexems.AddLast(this);
+            while (signs.Peek() is LBracket == false)
+            {
+                lexems.AddLast(signs.Peek());
+                signs.Pop();
+            }
+            signs.Pop();
         }
     }
 }

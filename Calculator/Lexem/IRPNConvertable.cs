@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Calculator.Lexem
+namespace Calculator
 {
     public interface IRPNConvertable
     {
-        public void RPNConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems);
+        public void RPNConvert(Stack<Sign> signs, LinkedList<Lexem> lexems);
     }
 }

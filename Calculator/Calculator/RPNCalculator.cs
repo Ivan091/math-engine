@@ -6,15 +6,15 @@ namespace Calculator
 {
     class RPNCalculator
     {
-        private IEnumerable<ILexem> Lexems { get; set; }
-        public RPNCalculator(IEnumerable<ILexem> lexems)
+        private IEnumerable<IRPNCalculatable> Lexems { get; set; }
+        public RPNCalculator(IEnumerable<IRPNCalculatable> lexems)
         {
             Lexems = lexems;
         }
 
         public double Calculate ()
         {
-            var stack = new Stack<ILexem>();
+            var stack = new Stack<Lexem>();
 
             foreach (var lexem in Lexems)
             {

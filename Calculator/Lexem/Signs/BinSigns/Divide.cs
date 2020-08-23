@@ -5,16 +5,18 @@ using System.Text.RegularExpressions;
 
 namespace Calculator
 {
-    public class Minus : BinSign
+    public class Divide : BinSign
     {
+        public override Priority Priority => Priority.Miltiply;
+
         public override double Calculate(double lNum, double rNum)
         {
-            return lNum - rNum;
+            return lNum / rNum;
         }
 
-        public override ILexem Create(Match match)
+        public override Lexem CreateSame(Match match)
         {
-            return new Minus();
+            return new Divide();
         }
-    }   
+    }
 }

@@ -6,15 +6,15 @@ namespace Calculator
 {
     class RPNConvertor
     {
-        private IEnumerable<ILexem> Lexems { get; set; }
-        public RPNConvertor(IEnumerable<ILexem> lexems)
+        private IEnumerable<IRPNConvertable> Lexems { get; set; }
+        public RPNConvertor(IEnumerable<IRPNConvertable> lexems)
         {
             Lexems = lexems;
         }
-        public IEnumerable<ILexem> Convert ()
+        public IEnumerable<Lexem> Convert ()
         {
-            var signs = new Stack<BinSign>();
-            var polSeq = new LinkedList<ILexem>();
+            var signs = new Stack<Sign>();
+            var polSeq = new LinkedList<Lexem>();
 
             foreach (var lexem in Lexems)
             {

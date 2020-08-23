@@ -6,6 +6,6 @@ namespace Calculator
 {
     public interface IRPNCalculatable
     {
-        public abstract void RPNCalculate(Stack<ILexem> lexems);
+        public abstract void RPNCalculate(Stack<Lexem> lexems);
     }
 }

@@ -18,7 +18,7 @@ namespace Calculator
 
             foreach (var lexem in Lexems)
             {
-                lexem.RevPolNotConvert(signs, polSeq);
+                lexem.RPNConvert(signs, polSeq);
             }
 
             while (signs.Count > 0)

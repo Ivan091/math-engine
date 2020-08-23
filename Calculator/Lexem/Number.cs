@@ -24,7 +24,7 @@ namespace Calculator
             lexems.Push(this);
         }
 
-        public void RevPolNotConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems)
+        public void RPNConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems)
         {
             lexems.AddLast(this);
         }

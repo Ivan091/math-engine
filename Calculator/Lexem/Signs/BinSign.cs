@@ -22,7 +22,7 @@ namespace Calculator
             lexems.Push(new Number(this.Calculate(lNum.Value, rNum.Value)));
         }
 
-        public void RevPolNotConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems)
+        public void RPNConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems)
         {
             binSigns.Push(this);
         }

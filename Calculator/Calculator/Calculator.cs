@@ -13,20 +13,17 @@ namespace Calculator
         public Calculator(string input)
         {
             LexicalAnalyzer = new LexicalAnalyzer(input);
-
         }
 
         public double Calculate()
         {
-            RevPolNotConverter = new RPNConvertor(LexicalAnalyzer.Analyse());
-            RPNCalculator = new RPNCalculator(RevPolNotConverter.Convert());
+            RPNConvertor = new RPNConvertor(LexicalAnalyzer.Analyse());
+            RPNCalculator = new RPNCalculator(RPNConvertor.Convert());
             return RPNCalculator.Calculate();
 
         }
-
-
         private LexicalAnalyzer LexicalAnalyzer { get; set; }
+        private RPNConvertor RPNConvertor { get; set; }
         private RPNCalculator RPNCalculator { get; set; }
-        private RPNConvertor RevPolNotConverter { get; set; }
     }
 }

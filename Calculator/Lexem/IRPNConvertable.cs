@@ -6,6 +6,6 @@ namespace Calculator.Lexem
 {
     public interface IRPNConvertable
     {
-        public void RevPolNotConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems);
+        public void RPNConvert(Stack<BinSign> binSigns, LinkedList<ILexem> lexems);
     }
 }

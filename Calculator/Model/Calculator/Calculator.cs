@@ -10,10 +10,10 @@ namespace Calculator
 {
     public class Calculator
     {
+        private string Input { get; set; }
         private LexicalAnalyzer LexicalAnalyzer { get; set; }
         private RPNConverter RPNConverter { get; set; }
         private RPNComputer RPNComputer { get; set; }
-        private string Input { get; set; }
         public Calculator(string input)
         {
             Input = input;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 
 namespace Calculator
@@ -8,8 +9,22 @@ namespace Calculator
     {
         static void Main()
         {
-            var calc = new Calculator("2-2");
-            Console.WriteLine(calc.Calculate());
+
+
+            while (true)
+            {
+                var s = Console.ReadLine();
+                var calc = new Calculator(s);
+
+                try
+                {
+                    Console.WriteLine(calc.Calculate());
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
     }
 }

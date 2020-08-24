@@ -10,20 +10,23 @@ namespace Calculator
 {
     public class Calculator
     {
+        private LexicalAnalyzer LexicalAnalyzer { get; set; }
+        private RPNConverter RPNConverter { get; set; }
+        private RPNComputer RPNComputer { get; set; }
+        private string Input { get; set; }
         public Calculator(string input)
         {
-            LexicalAnalyzer = new LexicalAnalyzer(input);
+            Input = input;
+            
         }
 
         public double Calculate()
         {
-            RPNConvertor = new RPNConvertor(LexicalAnalyzer.Analyse());
-            RPNCalculator = new RPNComputer(RPNConvertor.Convert());
-            return RPNCalculator.Calculate();
+            LexicalAnalyzer = new LexicalAnalyzer(Input);
+            RPNConverter = new RPNConverter(LexicalAnalyzer.Analyse());
+            RPNComputer = new RPNComputer(RPNConverter.Convert());
+            return RPNComputer.Compute();
 
         }
-        private LexicalAnalyzer LexicalAnalyzer { get; set; }
-        private RPNConvertor RPNConvertor { get; set; }
-        private RPNComputer RPNCalculator { get; set; }
     }
 }

@@ -12,7 +12,7 @@ namespace Calculator
             Lexems = lexems;
         }
 
-        public double Calculate ()
+        public double Compute ()
         {
             var stack = new Stack<IRPNComputable>();
 

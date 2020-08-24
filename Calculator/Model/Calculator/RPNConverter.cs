@@ -4,10 +4,10 @@ using System.Net.Http.Headers;
 
 namespace Calculator
 {
-    class RPNConvertor
+    class RPNConverter
     {
         private IEnumerable<IRPNConvertable> Lexems { get; set; }
-        public RPNConvertor(IEnumerable<IRPNConvertable> lexems)
+        public RPNConverter(IEnumerable<IRPNConvertable> lexems)
         {
             Lexems = lexems;
         }

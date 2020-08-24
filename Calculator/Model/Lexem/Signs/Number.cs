@@ -2,7 +2,7 @@
 
 namespace Calculator
 {
-    class Number : ILexem
+    internal class Number : ILexem
     {
         public double Value { get; set; }
 

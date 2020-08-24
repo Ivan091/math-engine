@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Calculator
+﻿namespace Calculator
 {
-    class UnMinus : Function
+    internal class UnMinus : Function
     {
-        public override double Compute(double arg)
+        public override double Calculate(double arg)
         {
             return -arg;
         }

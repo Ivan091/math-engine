@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
+﻿using System.Collections.Generic;
 
 namespace Calculator
 {
-    class RPNConverter
+    internal class RPNConverter
     {
         private IEnumerable<IRPNConvertable> Lexems { get; set; }
+
         public RPNConverter(IEnumerable<IRPNConvertable> lexems)
         {
             Lexems = lexems;
         }
-        public IEnumerable<ILexem> Convert ()
+
+        public IEnumerable<ILexem> Convert()
         {
             var signs = new Stack<Sign>();
             var polSeq = new LinkedList<ILexem>();

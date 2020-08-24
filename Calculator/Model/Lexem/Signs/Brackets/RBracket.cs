@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Collections.Generic;
 
 namespace Calculator
 {
-    public class RBracket : Sign
+    internal abstract class RBracket : Sign
     {
         public override Priority Priority => Priority.AsBracket;
+
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {
             return;

@@ -1,10 +1,10 @@
 ﻿namespace Calculator
 {
-    internal class MultiplyFabric : ILexemFabric
+    internal class ModulFabric : ILexemFabric
     {
         public ILexem Create(ILexem prev, string str)
         {
-            return new Multiply();
+            return new Modul();
         }
     }
 }

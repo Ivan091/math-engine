@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Calculator
+﻿namespace Calculator
 {
-    public class BinMinus : BinOperator
+    internal class BinMinus : BinOperator
     {
         public override Priority Priority => Priority.AsPlus;
 
-        public override double Compute(double lArg, double rArg)
+        public override double Calculate(double lArg, double rArg)
         {
             return lArg - rArg;
         }

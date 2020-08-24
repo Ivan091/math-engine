@@ -4,7 +4,7 @@ namespace Calculator
 {
     public abstract class BinOperator : Sign
     {
-        public abstract double Compute(double lArg, double rArg);
+        public abstract double Calculate(double lArg, double rArg);
 
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {
@@ -12,7 +12,7 @@ namespace Calculator
 
             var lArg = lexems.Peek() as Number;
 
-            lArg.Value = this.Compute(lArg.Value, rArg.Value);
+            lArg.Value = this.Calculate(lArg.Value, rArg.Value);
         }
     }
 }

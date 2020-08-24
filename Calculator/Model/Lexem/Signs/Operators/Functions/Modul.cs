@@ -2,11 +2,11 @@
 
 namespace Calculator
 {
-    internal class Exponent : Function
+    internal class Modul : Function
     {
         public override double Calculate(double arg)
         {
-            return Math.Exp(arg);
+            return Math.Abs(arg);
         }
     }
 }

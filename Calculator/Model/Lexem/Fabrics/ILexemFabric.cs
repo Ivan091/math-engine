@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-
-namespace Calculator
+﻿namespace Calculator
 {
     public interface ILexemFabric
     {

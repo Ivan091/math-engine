@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Calculator
+﻿namespace Calculator
 {
-    class ExponentFabric : ILexemFabric
+    internal class ExponentFabric : ILexemFabric
     {
         public ILexem Create(ILexem prev, string str)
         {

@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Calculator
 {
-    class RPNComputer
+    internal class RPNComputer
     {
         private IEnumerable<IRPNComputable> Lexems { get; set; }
+
         public RPNComputer(IEnumerable<IRPNComputable> lexems)
         {
             Lexems = lexems;
         }
 
-        public double Compute ()
+        public double Compute()
         {
             var stack = new Stack<IRPNComputable>();
 

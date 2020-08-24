@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    public class DivideFabric : ILexemFabric
+    internal class DivideFabric : ILexemFabric
     {
         public ILexem Create(ILexem prev, string str)
         {

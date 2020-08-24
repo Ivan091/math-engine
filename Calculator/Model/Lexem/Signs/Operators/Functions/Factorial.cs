@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.RegularExpressions;
 
 namespace Calculator
 {
-    class Factorial : Function
+    internal class Factorial : Function
     {
-        public override double Compute(double arg)
+        public override double Calculate(double arg)
         {
             var n = Math.Abs(arg);
 
@@ -16,7 +13,7 @@ namespace Calculator
 
             var fact = 1;
 
-            for (var i = 1; i <=n; i++)
+            for (var i = 1; i <= n; i++)
                 fact *= i;
 
             return arg > 0 ? fact : -fact;

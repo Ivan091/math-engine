@@ -4,7 +4,15 @@ namespace Calculator
 {
     internal class Program
     {
-        public static void Main()
+        internal static void Main()
+        {
+            Run();
+            return;
+            var calc = new Calculator("exp(2)");
+            Console.WriteLine(calc.Calculate());
+        }
+
+        private static void Run()
         {
             while (true)
             {

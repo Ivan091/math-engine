@@ -10,11 +10,11 @@ namespace Calculator
     {
         private struct FabricMatchPair : IComparable<FabricMatchPair>
         {
-            public ILexemFabric Fabric { get; private set; }
+            internal ILexemFabric Fabric { get; private set; }
 
-            public Match Match { get; private set; }
+            internal Match Match { get; private set; }
 
-            public FabricMatchPair(ILexemFabric fabric, Match match)
+            internal FabricMatchPair(ILexemFabric fabric, Match match)
             {
                 Fabric = fabric;
                 Match = match;
@@ -30,8 +30,12 @@ namespace Calculator
 
         private Dictionary<ILexemFabric, Regex> LexemToRegex { get; } = new Dictionary<ILexemFabric, Regex>
         {
-            // Common operators
+            // Numbers and constants
             { new NumberFabric(), new Regex(@"\d+(?:\.\d+)?") },
+            { new PiConstFabric(), new Regex(@"PI") },
+            { new EConstFabric(), new Regex(@"E") },
+
+            // Common operators
             { new MinusFabric(), new Regex(@"-") },
             { new PlusFabric(), new Regex(@"\+") },
             { new CommaFabric(), new Regex(@",") },
@@ -51,14 +55,19 @@ namespace Calculator
             { new FactorialFabric(), new Regex(@"!") },
             { new ModulFabric(), new Regex(@"abs") },
             { new PowerFabric(), new Regex(@"pow") },
+            { new TanFabric(), new Regex(@"tan") },
+            { new CosFabric(), new Regex(@"cos") },
+            { new SinFabric(), new Regex(@"sin") },
+            { new NaturalLogathmFabric(), new Regex(@"ln") },
+            { new CustomLogarithmFabric(), new Regex(@"log") },
         };
 
-        public LexicalAnalyzer(string input)
+        internal LexicalAnalyzer(string input)
         {
             Input = input;
         }
 
-        public IEnumerable<ILexem> Analyse()
+        internal IEnumerable<ILexem> Analyse()
         {
             var matches = new SortedSet<FabricMatchPair>();
             foreach (var fabricMatchPair in LexemToRegex)

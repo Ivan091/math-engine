@@ -4,9 +4,9 @@ namespace Calculator
 {
     internal class Number : ILexem
     {
-        public double Value { get; set; }
+        internal double Value { get; set; }
 
-        public Number(double num)
+        internal Number(double num)
         {
             Value = num;
         }

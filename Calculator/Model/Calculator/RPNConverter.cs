@@ -6,12 +6,12 @@ namespace Calculator
     {
         private IEnumerable<IRPNConvertable> Lexems { get; set; }
 
-        public RPNConverter(IEnumerable<IRPNConvertable> lexems)
+        internal RPNConverter(IEnumerable<IRPNConvertable> lexems)
         {
             Lexems = lexems;
         }
 
-        public IEnumerable<ILexem> Convert()
+        internal IEnumerable<ILexem> Convert()
         {
             var signs = new Stack<Sign>();
             var polSeq = new LinkedList<ILexem>();

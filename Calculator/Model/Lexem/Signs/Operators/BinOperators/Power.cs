@@ -4,9 +4,9 @@ namespace Calculator
 {
     internal class Power : BinOperator
     {
-        protected override Priority Priority => Priority.AsPower;
+        protected internal override Priority Priority => Priority.AsPower;
 
-        public override double Calculate(double lArg, double rArg)
+        internal override double Calculate(double lArg, double rArg)
         {
             return Math.Pow(lArg, rArg);
         }

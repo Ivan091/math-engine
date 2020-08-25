@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    public interface ILexem : IRPNConvertable, IRPNComputable
+    internal interface ILexem : IRPNConvertable, IRPNComputable
     {
     }
 }

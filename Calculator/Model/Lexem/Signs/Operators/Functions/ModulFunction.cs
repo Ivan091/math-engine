@@ -2,9 +2,9 @@
 
 namespace Calculator
 {
-    internal class Modul : Function
+    internal class ModulFunction : Function
     {
-        public override double Calculate(double[] args)
+        internal override double Calculate(double[] args)
         {
             return Math.Abs(args[0]);
         }

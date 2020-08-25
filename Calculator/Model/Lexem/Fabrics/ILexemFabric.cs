@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    public interface ILexemFabric
+    internal interface ILexemFabric
     {
         public ILexem Create(ILexem prev, string str);
     }

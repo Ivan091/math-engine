@@ -6,12 +6,12 @@ namespace Calculator
     {
         private IEnumerable<IRPNComputable> Lexems { get; set; }
 
-        public RPNComputer(IEnumerable<IRPNComputable> lexems)
+        internal RPNComputer(IEnumerable<IRPNComputable> lexems)
         {
             Lexems = lexems;
         }
 
-        public double Compute()
+        internal double Compute()
         {
             var stack = new Stack<IRPNComputable>();
 

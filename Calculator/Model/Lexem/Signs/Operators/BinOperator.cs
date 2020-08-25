@@ -2,10 +2,8 @@
 
 namespace Calculator
 {
-    public abstract class BinOperator : Sign
+    internal abstract class BinOperator : Sign
     {
-        public abstract double Calculate(double lArg, double rArg);
-
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {
             var rArg = lexems.Pop() as Number;
@@ -14,5 +12,7 @@ namespace Calculator
 
             lArg.Value = this.Calculate(lArg.Value, rArg.Value);
         }
+
+        internal abstract double Calculate(double lArg, double rArg);
     }
 }

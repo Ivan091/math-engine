@@ -4,7 +4,9 @@ namespace Calculator
 {
     internal class Factorial : Function
     {
-        public override double Calculate(double[] args)
+        protected internal override Accession Accession => Accession.Right;
+
+        internal override double Calculate(double[] args)
         {
             var n = Math.Abs(args[0]);
 

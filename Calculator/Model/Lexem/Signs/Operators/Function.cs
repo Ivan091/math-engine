@@ -2,13 +2,11 @@
 
 namespace Calculator
 {
-    public abstract class Function : Sign
+    internal abstract class Function : Sign
     {
+        protected internal override Priority Priority => Priority.AsFunction;
+
         protected virtual int OperandCount => 1;
-
-        protected override Priority Priority => Priority.AsFunction;
-
-        public abstract double Calculate(double[] args);
 
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {
@@ -25,5 +23,7 @@ namespace Calculator
 
             (lexems.Peek() as Number).Value = this.Calculate(args);
         }
+
+        internal abstract double Calculate(double[] args);
     }
 }

@@ -2,9 +2,9 @@
 {
     internal class BinMinus : BinOperator
     {
-        protected override Priority Priority => Priority.AsPlus;
+        protected internal override Priority Priority => Priority.AsPlus;
 
-        public override double Calculate(double lArg, double rArg)
+        internal override double Calculate(double lArg, double rArg)
         {
             return lArg - rArg;
         }

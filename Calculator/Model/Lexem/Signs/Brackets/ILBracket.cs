@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    internal interface ILBracket
+    internal interface ILBracket : IRPNConvertable
     {
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Calculator
 {
-    public interface IRPNConvertable
+    internal interface IRPNConvertable
     {
         public void RPNConvert(Stack<Sign> signs, LinkedList<ILexem> lexems);
     }

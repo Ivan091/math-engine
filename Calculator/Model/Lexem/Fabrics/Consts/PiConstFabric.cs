@@ -1,10 +1,10 @@
 ﻿namespace Calculator
 {
-    internal class ModulFabric : ILexemFabric
+    internal class PiConstFabric : ILexemFabric
     {
         public ILexem Create(ILexem prev, string str)
         {
-            return new ModulFunction();
+            return new PiConst();
         }
     }
 }

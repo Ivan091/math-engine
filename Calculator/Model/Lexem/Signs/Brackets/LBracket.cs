@@ -5,7 +5,7 @@ namespace Calculator
 {
     internal abstract class LBracket : Sign, ILBracket
     {
-        protected override Priority Priority => Priority.AsBracket;
+        protected internal override Priority Priority => Priority.AsBracket;
 
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {

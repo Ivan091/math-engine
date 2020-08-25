@@ -5,7 +5,7 @@ namespace Calculator
 {
     internal class Comma : Sign, ILBracket, IRBracket
     {
-        protected override Priority Priority => Priority.AsBracket;
+        protected internal override Priority Priority => Priority.AsBracket;
 
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {

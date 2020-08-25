@@ -1,6 +1,6 @@
 ﻿namespace Calculator
 {
-    public class Calculator
+    internal class Calculator
     {
         private string Input { get; set; }
 
@@ -10,12 +10,12 @@
 
         private RPNConverter RPNConverter { get; set; }
 
-        public Calculator(string input)
+        internal Calculator(string input)
         {
             Input = input;
         }
 
-        public double Calculate()
+        internal double Calculate()
         {
             LexicalAnalyzer = new LexicalAnalyzer(Input);
             RPNConverter = new RPNConverter(LexicalAnalyzer.Analyse());

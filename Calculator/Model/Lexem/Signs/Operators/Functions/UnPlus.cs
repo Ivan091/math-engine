@@ -2,9 +2,9 @@
 {
     internal class UnPlus : Function
     {
-        public override double Calculate(double arg)
+        public override double Calculate(double[] args)
         {
-            return arg;
+            return args[0];
         }
     }
 }

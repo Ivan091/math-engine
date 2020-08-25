@@ -2,7 +2,7 @@
 {
     internal class Multiply : BinOperator
     {
-        public override Priority Priority => Priority.AsMiltiply;
+        protected override Priority Priority => Priority.AsMiltiply;
 
         public override double Calculate(double lArg, double rArg)
         {

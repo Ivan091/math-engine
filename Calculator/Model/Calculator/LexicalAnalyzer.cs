@@ -34,10 +34,12 @@ namespace Calculator
             { new NumberFabric(), new Regex(@"\d+(?:\.\d+)?") },
             { new MinusFabric(), new Regex(@"-") },
             { new PlusFabric(), new Regex(@"\+") },
+            { new CommaFabric(), new Regex(@",") },
 
             // Binary operators
             { new DivideFabric(), new Regex(@"/") },
             { new MultiplyFabric(), new Regex(@"\*") },
+            { new PowerFabric(), new Regex(@"\^") },
 
             // Brackets
             { new LBracketFabric(), new Regex(@"\(") },
@@ -48,6 +50,7 @@ namespace Calculator
             { new ExponentFabric(), new Regex(@"exp") },
             { new FactorialFabric(), new Regex(@"!") },
             { new ModulFabric(), new Regex(@"abs") },
+            { new PowerFabric(), new Regex(@"pow") },
         };
 
         public LexicalAnalyzer(string input)

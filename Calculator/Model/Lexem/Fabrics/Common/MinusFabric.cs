@@ -4,7 +4,7 @@
     {
         public ILexem Create(ILexem prev, string str)
         {
-            if (prev is LBracket || prev is null)
+            if (prev is ILBracket || prev is null)
                 return new UnMinus();
             return new BinMinus();
         }

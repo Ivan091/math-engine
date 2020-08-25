@@ -4,7 +4,7 @@ namespace Calculator
 {
     public abstract class Sign : ILexem
     {
-        public abstract Priority Priority { get; }
+        protected abstract Priority Priority { get; }
 
         public abstract void RPNCompute(Stack<IRPNComputable> lexems);
 

@@ -4,9 +4,9 @@ namespace Calculator
 {
     internal class Exponent : Function
     {
-        public override double Calculate(double arg)
+        public override double Calculate(double[] args)
         {
-            return Math.Exp(arg);
+            return Math.Exp(args[0]);
         }
     }
 }

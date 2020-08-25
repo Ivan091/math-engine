@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Calculator
 {
-    internal abstract class LBracket : Sign, ILBracket
+    internal class Comma : Sign, ILBracket, IRBracket
     {
         protected override Priority Priority => Priority.AsBracket;
 
@@ -14,6 +14,11 @@ namespace Calculator
 
         public override void RPNConvert(Stack<Sign> signs, LinkedList<ILexem> lexems)
         {
+            while (signs.Peek() is ILBracket == false)
+            {
+                lexems.AddLast(signs.Pop());
+            }
+            signs.Pop();
             signs.Push(this);
         }
     }

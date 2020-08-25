@@ -1,19 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Calculator
 {
-    internal abstract class RBracket : Sign
+    internal abstract class RBracket : Sign, IRBracket
     {
-        public override Priority Priority => Priority.AsBracket;
+        protected override Priority Priority => Priority.AsBracket;
 
         public override void RPNCompute(Stack<IRPNComputable> lexems)
         {
-            return;
+            throw new NotImplementedException();
         }
 
         public override void RPNConvert(Stack<Sign> signs, LinkedList<ILexem> lexems)
         {
-            while (signs.Peek() is LBracket == false)
+            while (signs.Peek() is ILBracket == false)
             {
                 lexems.AddLast(signs.Pop());
             }

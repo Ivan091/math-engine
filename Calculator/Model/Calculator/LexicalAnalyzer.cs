@@ -28,6 +28,11 @@ namespace Calculator
 
         private string Input { get; set; }
 
+        /// <summary>
+        ///  To add new Lexems u need to create :
+        /// new Lexem class : ILexem or Sign or their any childes
+        /// add new fabric : ILexemfabric and add the fabric to this dictionary
+        /// </summary>
         private Dictionary<ILexemFabric, Regex> LexemToRegex { get; } = new Dictionary<ILexemFabric, Regex>
         {
             // Numbers and constants
